@@ -146,6 +146,8 @@ function Asignaracientos() {
         fila.setAttribute("id", `filaciento${i}`);
         fila.setAttribute("name", `input${i}`);
         fila.setAttribute("placeholder", `Fila de Aciento ${i}`);
+        fila.setAttribute("pattern", "[^\d]*");
+        fila.setAttribute("title", "No se permiten números");
         fila.required = true;
         contenedor.appendChild(fila);
 

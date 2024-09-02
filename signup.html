@@ -12,7 +12,7 @@
         <h2>Registro</h2>
         <form id="signupForm">
             <label>Nombre</label>
-            <input type="text" placeholder="..." pattern="[A-Za-z]*" id="name" required autofocus>
+            <input type="text" placeholder="..."  pattern="[^\d]*" title="No se permiten números" id="name" required autofocus>
             <label>Mail</label>
             <input type="email" oninput="convertToLowercase(this)" placeholder="..." id="email" required>
             <label>Contraseña</label>
@@ -23,5 +23,6 @@
     </section>
     <script src="js/signup.js"></script>
     
+        
 </body>
 </html>

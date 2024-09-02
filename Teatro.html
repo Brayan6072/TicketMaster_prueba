@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>We are coming soon</title>
+		<title>Teatros</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -59,7 +59,7 @@
                                 
                                 <form id="FormTeatro">
 									<label for="nombre">Dime tu nombre</label>
-                                    <input id="nombre" type="text" required>
+                                    <input id="nombre" type="text" pattern="[^\d]*" title="No se permiten números" required>
 
 									<label for="opciones">¿Elige una ubicación?</label>									 
                                      <select id="opciones" name="opciones" onclick="FuncionesHorarios()">
@@ -100,10 +100,10 @@
                                     </select> 
 
                                     <label for="titular"> Dime el nombre del titular</label>
-                                    <input id="titular" type="text" required>
+                                    <input id="titular" type="text" pattern="[^\d]*" title="No se permiten números" required>
 
                                     <label for="ntarjeta"> Dime el numero de tarjeta</label>
-                                    <input id="ntarjeta" type="text" required>
+                                    <input id="ntarjeta" type="text" pattern="\d*" title="No se permiten letras" required>
 
                                     <input type="submit" value="Finalizar">
                                 </form>
