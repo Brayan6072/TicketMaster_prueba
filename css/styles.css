@@ -133,3 +133,7 @@ select{
     width: 50%;
     height: 40px;
 }
+
+.contact-page-area section-gap{
+    height: auto;
+}
