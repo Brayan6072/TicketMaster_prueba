@@ -10,3 +10,6 @@ logout.addEventListener('click', ()=>{
     localStorage.removeItem('login_success')
     window.location.href = 'login.html'
 })
+
+
+

@@ -36,9 +36,8 @@
 						<div class="header__social">
 							
 							
-							<a class="social-icon social-icon__rounded" id="logout" href="login.html"><i class="fa fa-sign-out"></i>
-							</a>
-							<a class="social-icon social-icon__rounded" id="logout" href="atencion.html"><i class="fa fa-info"></i>
+							
+							<a class="social-icon social-icon__rounded" id="fa-home" href="home.html"><i class="fa fa-home"></i>
 							</a>
 							
 						</div>
@@ -54,16 +53,64 @@
 									</div>
 								</div>
 							</div>
-							<section style="justify-content: flex-start;">
+							<section class="contact-page-area section-gap" style="justify-content: flex-start;">
                                 
-                                <form id="loginForm">
-									<label for="opciones">¿Que tipo de boleto deseas comprar?</label>
-									 <p class="op"><a href="Teatro.html">Teatro</a></p> 
-									 <p class="op"><a href="Cine.html">Cine</a></p> 
-									 <p class="op"><a href="Museo.html">Museo</a></p> 
-									                           
-									
-                                </form>
+								<div class="container">
+									<div class="row">
+										
+										<div class="col-lg-4 d-flex flex-column address-wrap">
+											<div class="single-contact-address d-flex flex-row">
+												<div class="icon">
+													<span class="lnr lnr-home"></span>
+												</div>
+												<div class="contact-details">
+													<h5>Binghamton, New York</h5>
+													<p>
+														4343 Hinkle Deegan Lake Road
+													</p>
+												</div>
+											</div>
+											<div class="single-contact-address d-flex flex-row">
+												<div class="icon">
+													<span class="lnr lnr-phone-handset"></span>
+												</div>
+												<div class="contact-details">
+													<h5>00 (958) 9865 562</h5>
+													<p>Mon to Fri 9am to 6 pm</p>
+												</div>
+											</div>
+											<div class="single-contact-address d-flex flex-row">
+												<div class="icon">
+													<span class="lnr lnr-envelope"></span>
+												</div>
+												<div class="contact-details">
+													<h5>support@colorlib.com</h5>
+													<p>Send us your query anytime!</p>
+												</div>
+											</div>														
+										</div>
+										<div class="col-lg-8">
+											<form class="form-area contact-form text-right" id="myForm" action="mail.php" method="post">
+												<div class="row">	
+													<div class="col-lg-6 form-group">
+														<input tabindex="1" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+													
+														<input tabindex="2" name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+				
+														<input tabindex="3" name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
+													</div>
+													<div class="col-lg-6 form-group">
+														<textarea tabindex="4" class="common-textarea form-control" name="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>				
+													</div>
+													<div class="col-lg-12">
+														<div class="alert-msg" style="text-align: left;"></div>
+														<button tabindex="5" class="genric-btn primary" style="float: right;">Send Message</button>											
+													</div>
+												</div>
+											</form>	
+										</div>
+									</div>
+								</div>
                                 
                             </section>
 							
