@@ -11,6 +11,7 @@ formteatro.addEventListener('submit', (e)=>{
     const metdpago = document.querySelector('#pago').value
     const titular =document.querySelector('#titular').value
     const ntarjeta =document.querySelector('#ntarjeta').value
+    const mtdpaypal = document.getElementById("mtdpaypal").value
     let total = 0;
     
     let filaciento = [];
@@ -34,9 +35,16 @@ formteatro.addEventListener('submit', (e)=>{
     if(UserTicket){
         return alert('El usuario ya esta registado!')
     }  
+    if(metdpago == "Paypal"){
+        Ticket.push({nombre: nombre, ubicacion: ubicacion, funcion: funcion, cantidad: cantidad, tpacientos: tpacientos, 
+            filaciento: filaciento, numeroaciento: numeroaciento, metdpago: metdpago, titular:titular, mtdpaypal: mtdpaypal, total: total})
+    }else{
+        Ticket.push({nombre: nombre, ubicacion: ubicacion, funcion: funcion, cantidad: cantidad, tpacientos: tpacientos, 
+            filaciento: filaciento, numeroaciento: numeroaciento, metdpago: metdpago, titular:titular, ntarjeta: ntarjeta, total: total})
+    }
+ 
 
-    Ticket.push({nombre: nombre, ubicacion: ubicacion, funcion: funcion, cantidad: cantidad, tpacientos: tpacientos, 
-        filaciento: filaciento, numeroaciento: numeroaciento, metdpago: metdpago, titular:titular, ntarjeta: ntarjeta, total: total})
+
     localStorage.setItem('ticket', JSON.stringify(Ticket))
            
     alert('Pago Exitoso!')
@@ -58,6 +66,9 @@ formteatro.addEventListener('submit', (e)=>{
         ticketData += `-------------------------------\n`;   
         ticketData += `Método de Pago: ${usticket.metdpago}\n`;
         ticketData += `Titular: ${usticket.titular}\n`;
+        if(metdpago == "Paypal"){
+            ticketData += `Cuenta de paypal: ${usticket.mtdpaypal}\n`;     
+        }
         ticketData += `Total a Pagar: ${usticket.total}\n`;
         ticketData += `-------------------------------\n`;   
         
@@ -152,3 +163,74 @@ function Asignaracientos() {
     }
 }
 
+
+function pagos(){
+    card = document.getElementById("metodpay");
+    paypal = document.getElementById("Paypal");
+    pago = document.getElementById("pago");
+    card.style.display = "none";
+    paypal.style.display = "none";
+    if(pago.value == "Paypal"){
+        card.style.display = "none";
+        paypal.style.display = "block";
+        paypal.style.width = "-webkit-fill-available";
+    }else{
+        paypal.style.display = "none";
+        card.style.display = "block";
+    }
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("metodpay");
+
+    form.addEventListener("submit", (event) => {
+       
+        event.preventDefault();
+
+        
+        const titular = document.getElementById("titular").value.trim();
+        const ntarjeta = document.getElementById("ntarjeta").value.trim();
+        const exdate = document.getElementById("exdate").value.trim();
+        const cvv = document.getElementById("cvv").value.trim();
+
+        
+        const namePattern = /^[^\d]+$/; 
+        const numberPattern = /^\d+$/; 
+        const datePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; 
+        const cvvPattern = /^\d{3}$/; 
+
+        let isValid = true;
+
+        
+        if (!namePattern.test(titular)) {
+            alert("El nombre del titular no debe contener números.");
+            isValid = false;
+        }
+
+        
+        if (!numberPattern.test(ntarjeta)) {
+            alert("El número de tarjeta debe contener solo dígitos.");
+            isValid = false;
+        }
+
+        
+        if (!datePattern.test(exdate)) {
+            alert("La fecha de vencimiento debe estar en el formato MM/YY.");
+            isValid = false;
+        }
+
+       
+        if (!cvvPattern.test(cvv)) {
+            alert("El CVV debe contener exactamente 3 dígitos.");
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert("¡Formulario válido! Procesando datos...");
+            
+        }
+    });
+});

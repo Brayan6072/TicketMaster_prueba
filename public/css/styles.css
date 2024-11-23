@@ -108,6 +108,7 @@ section button{
 section div{
     display: flow-root;
 }
+
 .opcion {
     
     display: flex;
@@ -136,4 +137,8 @@ select{
 
 .contact-page-area section-gap{
     height: auto;
+}
+
+#Paypal, #metodpay{
+    display: none;
 }

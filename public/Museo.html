@@ -92,19 +92,35 @@
                                     
 
                                     <label for="pago">Elige tu metodo de pago</label>
-                                    <select id="pago" name="pago">
-                                        <option value="Debito">Debito</option>
-                                        <option value="Credito">Credito</option>
-                                        <option value="Paypal">Paypal</option>
+                                    <select id="pago" onclick="pagos();" name="pago">
+                                        <option onclick="pagos();" value="Debito">Debito</option>
+                                        <option onclick="pagos();" value="Credito">Credito</option>
+                                        <option onclick="pagos();" value="Paypal">Paypal</option>
                                     </select> 
 
-                                    <label for="titular"> Dime el nombre del titular</label>
-                                    <input id="titular" type="text" required>
+									<label for="titular"> Dime el nombre del titular</label>
+										<input id="titular" type="text" pattern="[^\d]*" title="No se permiten números" required>
+                                    <div id="metodpay">
+										
 
-                                    <label for="ntarjeta"> Dime el numero de tarjeta</label>
-                                    <input id="ntarjeta" type="text" required>
+										<label for="ntarjeta"> Dime el numero de tarjeta</label>
+										<input id="ntarjeta" type="text" pattern="\d*" maxlength="10" title="No se permiten letras">
 
-                                    <input type="submit" value="Finalizar">
+										<label for="exdate">Fecha de vencimiento</label>
+										<input id="exdate" type="text" pattern="\d*" title="No se permiten letras" placeholder="MM/YY" maxlength="4">
+										
+										<label for="cvv">CVV</label>
+										<input type="text" id="cvv" pattern="\d*" maxlength="3" title="No ser permiten letras" placeholder="123" >
+
+
+
+									</div>
+									<div id="Paypal">
+										<label for="mtdpaypal"> Cuenta de paypal</label>
+										<input name="mtdpaypal" id="mtdpaypal" type="text" placeholder="your@gmail.com">
+									</div>
+
+                                    <input type="submit" value="Pagar">
                                 </form>
                                 
                             </section>
