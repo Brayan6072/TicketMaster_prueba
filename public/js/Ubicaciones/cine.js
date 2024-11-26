@@ -48,6 +48,7 @@ formteatro.addEventListener('submit', (e)=>{
 
 
     localStorage.setItem('ticket', JSON.stringify(Ticket))
+
            
     alert('Pago Exitoso!')
     

@@ -35,6 +35,8 @@ formteatro.addEventListener('submit', (e)=>{
     if(UserTicket){
         return alert('El usuario ya esta registado!')
     }  
+
+    
     if(metdpago == "Paypal"){
         Ticket.push({nombre: nombre, ubicacion: ubicacion, funcion: funcion, cantidad: cantidad, tpacientos: tpacientos, 
             filaciento: filaciento, numeroaciento: numeroaciento, metdpago: metdpago, titular:titular, mtdpaypal: mtdpaypal, total: total})
